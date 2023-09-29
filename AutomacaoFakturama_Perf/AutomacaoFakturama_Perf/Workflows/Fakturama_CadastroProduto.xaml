@@ -1,0 +1,307 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Fakturama_CadastroProduto" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>626,5004</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Fakturama_CadastroProduto_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Orchestrator.Client</x:String>
+      <x:String>Microsoft.Rest</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Rest.ClientRuntime</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Fakturama_CadastroProduto" sap:VirtualizedContainerService.HintSize="568,4939" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Fakturama - C:\Fakturama" sap:VirtualizedContainerService.HintSize="506,4828" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="d497f847-d58f-4143-af1a-399dea305a78" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,4537" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[string.IsNullOrEmpty(in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString) = true]" sap:VirtualizedContainerService.HintSize="410,360" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new BusinessRuleException(&quot;Campo nome está vazio!&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
+              </If.Else>
+            </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New product'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvTextArgument="New product" CvType="Text" DesignTimeRectangle="19, 587, 96, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'New product'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' check:text='New product' /&gt;" Guid="6d816db0-27e4-486f-9353-ad7b056698c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAAaCAYAAABByvnlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKQSURBVGhD7VY7bhsxEOUVVCVKIqnKBQJk4RsYMJB06QyYcKE0KQwESGEgnQIihQ24U6MmRRpWOoCQIqq3UKtOJ9AJNOGQ+yGHXGglWBsaZvFg7cxwfo8zNNtut5AQDxIhkSEREhkSIZEhERIZWhEyGAyAMdYI1IfOJRyOVoRg0zebDcznc1gsFlq2Wq1gOp3CcrnUenom4TikCYkMrd8QbPxut4PZbKYnZTKZwHg81vKQfcJxOJgQzvmRhEjgypZxGZBnIHJbFitOn2vHhGSQZQy49OXPg5D95zsnREihSBGQU3kiRKN7QlQykjPIRO7J9XeuCFM+0S9jHKSSoX09VQH7pjWI5Be+aDzOs8q/G5NMsKXLhLBikzy87xyE2ga1T9TX3/7qNvgvhLT7rSC5aaT6WxWAskytvqLBuah/1yiKLydRN9WOQQmySAjYljqMxZpydb4NGeG87DM+WhMyHA5hNBo5/2X1ej3o9/tBex8kmarJlpzc1OomobxorlQ3u157WHioQL/wesqITscsJoXaWnGNzj5LY9A6XJ/++TBaE4LABq3X64qQ9tOBoMmYW2RGeV8hZeOVbUWEsvMaVqIpVkD3VAl59fqNe3MLvHh55IQgdOLoxy4yNOrFaiKrCtdnyNbz4zSI5mFsy7Xk29Y6d2XZJCvgxBPdSVcWNv/rw1+4/i7hw/gOzj7ewNuzT1oesvcRTsYtUqEiqUD5dmg5tWsqzsQyD7fxUzUulIcTk+h0o43OfdRdHVOXw/VryCz1ZXycPmP/CI86EnJ1+xsurn/C+4svBxLSJfbfxFhxECE393/g8tsvOL/6Ae/OPydCToAO35Au8QwISegGiZDIkAiJDImQyJAIiQpb+Af4vQJrrLsLHQAAAABJRU5ErkJggg==" InformativeScreenshot="4b6c959e192a9caf36c4a65ef31d30ea.png" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Item Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Item Number&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="405, 179, 508, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="bd1e660e-62a8-4d78-905d-3b1230165b6d" ImageBase64="" InformativeScreenshot="a9b82bd591f86d976e54ee184e5077d0.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="329, 182, 71, 15" ElementType="Text" FriendlyName="'Item Number'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Item Number' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Item Number' check:text='Item Number' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="405, 205, 508, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="088eb200-6a09-4f20-9dd0-4696291c7713" ImageBase64="" InformativeScreenshot="1a12f277826e6d896985bd2b47e0e114.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="368, 208, 32, 15" ElementType="Text" FriendlyName="'Name'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Name' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Name' check:text='Name' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Category'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Category&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="407, 233, 487, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd aaname='Category' cls='SWT_Window0' /&gt;&lt;wnd aaname='Category' cls='Edit' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd aaname='Category' cls='SWT_Window0' /&gt;&lt;wnd aaname='Category' cls='Edit' /&gt;" Guid="753e652c-ac68-4d4b-9b27-38191783d917" InformativeScreenshot="ca567377b1b795cee251e87c5bc29687.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="352, 234, 48, 15" ElementType="Text" FriendlyName="'Category'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Category' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Category' check:text='Category' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'GTIN'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;GTIN&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="405, 257, 508, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='4' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="368dfa1b-25a5-48f1-8442-f582b8d61a95" InformativeScreenshot="fb59f2cc10d18816c2922d62d1b7d6b8.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="374, 260, 26, 15" ElementType="Text" FriendlyName="'GTIN'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='GTIN' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='GTIN' check:text='GTIN' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'supplier code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Supplier Code&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="405, 283, 508, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='5' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="27d7e11f-3a92-45f1-b3e3-dd6f977d191a" InformativeScreenshot="88624ebe9e4e88a734e3f8b5ebbd42aa.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="329, 286, 71, 15" ElementType="Text" FriendlyName="'supplier code'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='supplier code' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='supplier code' check:text='supplier code' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Description&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="407, 311, 487, 82" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'editable text'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='6' /&gt;&lt;ctrl name='Description' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;&lt;ctrl name='Description' role='editable text' automationid='' /&gt;" Guid="d67c8bfb-76e0-4702-ae21-48706b18e370" InformativeScreenshot="2dfa4c07c891f3f9c66377ef3a544298.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="340, 344, 60, 15" ElementType="Text" FriendlyName="'Description'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Description' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Description' check:text='Description' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Price (gross)'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Price&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="422, 400, 132, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'R$ 0,00'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='8' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="32b9e995-e162-4c2e-bce9-1cdefab6c666" InformativeScreenshot="ebfdc421680f471f4828929a506f3efe.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="335, 403, 65, 15" ElementType="Text" FriendlyName="'Price (gross)'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Price (gross)' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Price (gross)' check:text='Price (gross)' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'cost price (net)'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Cost&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="405, 426, 132, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'R$ 0,00'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='9' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="4d73a305-2cef-4661-9049-2b9d278b4e16" InformativeScreenshot="7dd211452b7965ee57996d3cc7f3fe7d.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="321, 429, 79, 15" ElementType="Text" FriendlyName="'cost price (net)'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='cost price (net)' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='cost price (net)' check:text='cost price (net)' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'allowance'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Allowance&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="600, 426, 132, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='10' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="2c9d22d4-640e-426b-9377-a1659341df03" InformativeScreenshot="fc3b00038fe9e85aa8aab670fad008a5.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="542, 429, 53, 15" ElementType="Text" FriendlyName="'allowance'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='allowance' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='allowance' check:text='allowance' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NSelectItem DisplayName="Select Item 'VAT'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_TransactionItem.SpecificContent(&quot;VAT&quot;).ToString]" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="1">
+                  <x:String>Free of Tax</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="405, 362, 85, 23" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Free of Tax'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd aaname='VAT' cls='ComboBox' /&gt;&lt;ctrl name='VAT' role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd aaname='VAT' cls='ComboBox' /&gt;&lt;ctrl name='VAT' role='combo box' automationid='' /&gt;" Guid="de9316bc-a934-4f4e-8c2c-4f0c1fcc90e1" InformativeScreenshot="da913c69d53dd277021644b0dd102d9d.png" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="381, 366, 19, 15" ElementType="Text" FriendlyName="'VAT'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='VAT' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='VAT' check:text='VAT' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Stock'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_TransactionItem.SpecificContent(&quot;Stock&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="405, 390, 508, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'0,00'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' idx='11' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Edit' /&gt;" Guid="a82436e6-8a95-4a31-af3c-a9e590c99dc3" InformativeScreenshot="7360c5d4d484de5a8ab35ea14f9723c4.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="371, 393, 29, 15" ElementType="Text" FriendlyName="'Stock'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Stock' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;&lt;wnd cls='Static' title='Stock' check:text='Stock' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&lt;a href=&quot;#&quot;'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1057, 258, 80, 15" DesignTimeScaleFactor="1" FriendlyName="'&lt;a href=&quot;#&quot;'" FullSelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Product Picture' /&gt;&lt;wnd aaname='Select a Picture' cls='SysLink' title='&amp;lt;a href=&amp;quot;#&amp;quot; &amp;gt;Select a Picture&amp;lt;/a&amp;gt;' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Product Picture' /&gt;&lt;wnd aaname='Select a Picture' cls='SysLink' title='&amp;lt;a href=&amp;quot;#&amp;quot; &amp;gt;Select a Picture&amp;lt;/a&amp;gt;' check:text='&amp;lt;a href=&amp;quot;#&amp;quot; &amp;gt;Select a Picture&amp;lt;/a&amp;gt;' /&gt;" Guid="bdfbb266-ce57-4bd2-b13c-b98fea83ad48" InformativeScreenshot="035d3e8b0cb3310563a2a2c61485d285.png" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Text="[in_Config(&quot;FakturamaProductsPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Picture&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="183, 470, 532, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="6da80c55-7e41-42cf-a961-8d8483fd438e" InformativeScreenshot="ea4bae2ec8c4af3953a4b0b406cfe22e.png" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='#32770' title='Select a Picture' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="747, 494, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Abrir' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Abrir' check:text='unchecked' /&gt;" Guid="42a86c09-54a2-46b3-bac5-834f043401cf" ImageBase64="" InformativeScreenshot="53b066476aad4e7817d227fb68b88dec.png" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='#32770' title='Select a Picture' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="128, 60, 39, 54" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;wnd cls='ToolbarWindow32' idx='8' /&gt;&lt;ctrl name='Save' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='ToolbarWindow32' /&gt;&lt;ctrl name='Save' role='push button' automationid='' check:text='Save' /&gt;" Guid="06308155-c9df-4ba3-9092-b88ae7105a92" InformativeScreenshot="14b5f241858ad560cfcf5fc0744a4ba3.png" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Description'" sap:VirtualizedContainerService.HintSize="388,199" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="d497f847-d58f-4143-af1a-399dea305a78" Shortcuts="[d(hk)][d(ctrl)]w[u(ctrl)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="292, 159, 629, 479" DesignTimeScaleFactor="1" FriendlyName="'Description'" FullSelectorArgument="&lt;wnd aaname='*New product' cls='SWT_Window0' idx='2' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='*New product' cls='SWT_Window0' /&gt;&lt;wnd aaname='New product' cls='SWT_Window0' /&gt;&lt;wnd cls='SWT_GROUP' title='Description' check:text='Description' /&gt;" Guid="658d7c6a-113f-4076-a7e7-4e6e8ce17e1c" ImageBase64="" InformativeScreenshot="fec046c3b75095fbdcf57ca19fd76b9f.png" ScopeSelectorArgument="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+            </uix:NKeyboardShortcuts>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" FilePath="[in_Config(&quot;FakturamaPath&quot;).ToString]" IconBase64="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" InformativeScreenshot="aaa15e45d15bdbc93c580a631726a3e2.png" Selector="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" Title="Fakturama - C:\Fakturama" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,0 +1,117 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>536,824</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="546,759" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Fakturama - C:\Fakturama" sap:VirtualizedContainerService.HintSize="484,436" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Always" ScopeGuid="151585ea-649c-466d-b566-bf9ceefbc87f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" FilePath="[in_Config(&quot;FakturamaPath&quot;).ToString]" IconBase64="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" InformativeScreenshot="ad64476a18b33e56afd39d5a31211b0e.png" Selector="&lt;wnd app='fakturama.exe' cls='SWT_Window0' title='Fakturama - C:\Fakturama' /&gt;" Title="Fakturama - C:\Fakturama" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
